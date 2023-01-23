@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="task5.css">
+</head>
+<body>
+    <h1>Interface Admin</h1>
+    <form>
+        <input type="file" id="File" placeholder="Choisir votre image" >
+        <input id="input">
+        <button class="postbutton">Poster</button>
+        <div class="liste">
+            <ul id="students">
+
+            </ul>
+
+        </div>
+        
+    </form>
+    <script>
+        const fileButton=document.getElementById("File");
+        let Image="";
+        let submitButton=document.querySelector(".postbutton");
+        let inputField=document.getElementById('input');
+        let students=document.getElementById("students");
+        let i=0;
+        submitButton.addEventListener("click",AjoutPost);
+        function AjoutPost(){
+            let li=document.createElement("li");
+            li.id="line"+i;
+            i++;
+            if(inputField.value="" ){
+                Alert("Veuillez ajouter un étudiant avec son image s'il vous plaît ");
+            }
+            
+            }
+            
+        }
+        submitButton.addEventListener("keypress", function(e){
+            if(e.key=="Enter"){
+                AjoutPost();
+            }
+        });
+
+
+
+    </script>
+    
+</body>
+</html>
